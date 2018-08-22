@@ -47,6 +47,7 @@ $args = array(
 	'width'         => 1050,
 	'height'        => 100,
 	'default-image' => get_template_directory_uri() . '/images/header.jpg',
-	'uploads'       => true,
+	'uploads'       => false,
+	'header-text'   => true,
 );
 add_theme_support( 'custom-header', $args );
