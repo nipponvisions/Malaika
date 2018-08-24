@@ -16,22 +16,52 @@
     <head>
         <meta charset="<?php bloginfo( 'charset' ); ?>" >
         <title> <?php wp_title(); ?> </title>
+        <style type="text/css">
+
+
+			header{
+				background-color: orange;
+				margin: 0;
+				padding: 0;
+				}
+
+			#headerimg{
+					background: url("<?php bloginfo('stylesheet_directory'); ?>/images/header.jpg");
+					 background-repeat: no-repeat;
+					  background-position: top; 
+				min-height: 102px;	
+			}
+			h1{
+				margin: 0;
+				padding: 0;
+				/*font-size: 54pt ;*/
+			}
+			h3{
+				color: white;
+				margin: 0;
+				padding: 0;
+				/*font-size:  ;*/
+			}
+			
+        </style>
     
     <?php wp_head(); ?>
     </head>
 
     <body>
-    	<main>
+    	<main>	
 	    	<header>
+	    		 <div id="headerimg">
+					<h1> <a href="<?php echo get_option('home'); ?>">
+						 <?php bloginfo('name'); ?></a>
+					</h1>
 
-	    		 <img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="">
+					<div class="description">
+						<h3> <?php bloginfo('description'); ?> </h3>
+					</div><!--description -->
 
-		 		<h1>  <a href="<?php bloginfo('url');?>"> <?php bloginfo('name');?> </a> </h1>
-		        
-	            <div class="description">  
-	                <h3> <?php bloginfo('description') ; ?> </h3> 
-	            </div><!-- description -->
+				</div><!-- headerimg -->
 
 
-	            <?php wp_nav_menu(); ?>
+	     		<?php wp_nav_menu(); ?> 
 	 		</header>

@@ -43,11 +43,17 @@ add_action('widgets_init', 'register_malaika_sidebars');
 // source https://codex.wordpress.org/Custom_Headers
 // Set a custom header image
 
-$args = array(
-	'width'         => 1050,
-	'height'        => 100,
-	'default-image' => get_template_directory_uri() . '/images/header.jpg',
-	'uploads'       => false,
-	'header-text'   => true,
-);
-add_theme_support( 'custom-header', $args );
+function malaika_custom_header_setup(){
+	$args = array(
+		'width'         => 1050,
+		'height'        => 100,
+		'default-image' => get_template_directory_uri() . '/images/header.jpg',
+		'uploads'       =>true,
+		'header-text'   => true,
+	);
+	add_theme_support( 'custom-header', $args );
+}
+add_action('after_setup_theme','malaika_custom_header_setup' );
+
+
+
